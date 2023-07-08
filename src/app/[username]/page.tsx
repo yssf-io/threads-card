@@ -98,6 +98,10 @@ export default async function Page({
           </p>
         </div>
       )}
+
+      <p className="text-center underline cursor-pointer text-3xl mt-16 font-light">
+        <Link href="/">Back</Link>
+      </p>
     </div>
   );
 }
