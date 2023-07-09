@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ThreadsAPI, ThreadsUser } from "threads-api";
 import { Card } from "./(components)/Card";
+import { Metadata } from "next";
 
 const mockUser: ThreadsUser = {
   is_private: false,
@@ -31,6 +32,16 @@ async function getData(
   const profile = await threads.getUserProfile(username, id);
 
   return { id, profile };
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { username: string };
+}): Promise<Metadata> {
+  return {
+    title: `${params.username}'s Card`,
+  };
 }
 
 export default async function Page({
