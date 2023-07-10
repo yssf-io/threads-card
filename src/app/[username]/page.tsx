@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ThreadsAPI, ThreadsUser } from "threads-api";
 import { Card } from "./(components)/Card";
 import { Metadata } from "next";
+import ShareButtons from "./(components)/ShareButtons";
 
 const mockUser: ThreadsUser = {
   is_private: false,
@@ -54,7 +55,13 @@ export default async function Page({
   return (
     <div>
       {id !== "-1" ? (
-        <Card {...profile} />
+        <div>
+          <Card {...profile} />
+
+          <div className="mt-36 m-auto w-2/3">
+            <ShareButtons username={params.username} />
+          </div>
+        </div>
       ) : (
         <div className="flex flex-col h-screen align-middle justify-center">
           <p className="text-center text-3xl font-light">
