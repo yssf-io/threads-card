@@ -12,7 +12,8 @@ Small profile page to share your Threads profile.
 - ✅ Display card with name, bio, picture and QR Code
 - ✅ Page per card
 - ✅ Home page to look for cards
-- 🚧 Share/Download button
+- ✅ Share buttons
+- 🚧 Download button
 - 🚧 Open Graph integration
 - 🔲 Link "@" to profile
 - 🔲 Cache QR Codes
