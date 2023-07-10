@@ -60,15 +60,14 @@ export default async function Page({
           <p className="text-center text-3xl font-light">
             This user does not exist
           </p>
-          <p className="text-center text-xl underline cursor-pointer">
-            <Link href="/">Back</Link>
-          </p>
         </div>
       )}
 
-      <p className="text-center underline cursor-pointer text-3xl mt-16 font-light">
-        <Link href="/">Back</Link>
-      </p>
+      <div className="w-full absolute m-auto bottom-5">
+        <p className="text-center underline cursor-pointer text-3xl mt-16 font-light">
+          <Link href="/">Back</Link>
+        </p>
+      </div>
     </div>
   );
 }
