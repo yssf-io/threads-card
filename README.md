@@ -15,7 +15,7 @@ Small profile page to share your Threads profile.
 - ✅ Share buttons
 - 🚧 Download button
 - 🚧 Open Graph integration
-- 🔲 Link "@" to profile
+- ✅ Link "@" to profile
 - 🔲 Cache QR Codes
 - 🔲 Authentication
   - 🔲 Ask user to post a thread to authenticate them (until better solution)
