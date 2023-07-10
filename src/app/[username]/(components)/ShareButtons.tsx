@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import ShareIFrame from "./ShareIFrame";
 
 const ShareButtons = ({ username }: { username: string }) => {
   const [copied, setCopied] = useState(false);
@@ -14,7 +15,7 @@ const ShareButtons = ({ username }: { username: string }) => {
   return (
     <div>
       <p className="text-2xl">Share this Card</p>
-      <div className="flex justify-between w-fit">
+      <div className="flex justify-start items-start">
         <p className="text-xl mt-4 px-4 py-2 rounded-md bg-blue-500 text-white w-fit cursor-pointer">
           <a
             href={`https://twitter.com/intent/tweet?&url=http://threads-card.vercel.app/@${username}`}
@@ -28,6 +29,9 @@ const ShareButtons = ({ username }: { username: string }) => {
         >
           {copied ? "Copied!" : "Copy Link"}
         </p>
+      </div>
+      <div className="border mt-2">
+        <ShareIFrame username={username} />
       </div>
     </div>
   );
