@@ -3,6 +3,20 @@ import Link from "next/link";
 import Image from "next/image";
 import { ThreadsUser } from "threads-api";
 
+function splitByMention(input: string): { value: string; mention: boolean }[] {
+  let result: { value: string; mention: boolean }[] = [];
+  let parts = input.split(/(@\w+)/g);
+
+  parts.forEach((part) => {
+    if (part) {
+      let isMention = part.startsWith("@");
+      result.push({ value: part, mention: isMention });
+    }
+  });
+
+  return result;
+}
+
 export const Card = ({
   username,
   full_name,
@@ -43,11 +57,32 @@ export const Card = ({
                 full_name ? "text-xl" : "text-2xl mt-3"
               }`}
             >
-              @{username}
+              <a
+                className="text-blue-500 underline"
+                href={`https://threads.net/@${username}`}
+              >
+                @{username}
+              </a>
             </p>
           </div>
         </div>
-        <p className="whitespace-pre-wrap mt-3 w-fit m-auto">{biography}</p>
+        <p className="whitespace-pre-wrap mt-3 w-fit m-auto">
+          {splitByMention(biography).map(({ value, mention }) => (
+            <span>
+              {mention ? (
+                <a
+                  className="text-blue-500 underline"
+                  href={`https://threads.net/${value}`}
+                >
+                  {value}
+                </a>
+              ) : (
+                value
+              )}
+            </span>
+          ))}
+        </p>
+
         {bio_links.map((link) => (
           <p className="mt-3 w-fit m-auto text-blue-500 underline">
             <Link href={link.url}>
