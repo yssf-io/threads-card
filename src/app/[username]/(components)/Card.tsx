@@ -41,7 +41,7 @@ export const Card = ({
             alt="profile pic"
             width={300}
             height={300}
-            className="w-[65%] md:w-[300px] m-auto md:m-0"
+            className="w-[65%] md:w-[300px] m-auto md:m-0 object-contain"
           />
           <div className="mt-3">
             <Image
